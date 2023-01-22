@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+*:focus {
+	outline: none;
+}
+
+* {
+	--color-background: #252933;
+	--color-background-second: #303a52;
+	--color-background-third: #374977;
+	--color-background-fourth: #384e86;
+	--color-text: #c8e0ff;
+	--color-primary: #fc85ae;
+
+	font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+	background-color: var(--color-background);
+
+	text-align: center;
+	color: var(--color-text);
+}
+h1 {
+	font-weight: bold;
+}
+select {
+	cursor: pointer;
+	margin: 0px !important;
+	height: 37px;
+}
+
+.stack-col {
+	display: flex;
+	flex-direction: column;
+}
+.center {
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+#graph {
+	padding: 20px;
+	margin-left: 60px;
+	width: 800px;
+	height: 500px;
+	border: 3px dashed var(--color-background-second);
+	border-radius: 20px;
+}
+input,
+select {
+	background-color: var(--color-background-second);
+	color: var(--color-text);
+	border-radius: 10px;
+	padding: 10px;
+	width: 100px;
+	margin: 10px;
+	border: none;
+}
+
+.stack-row {
+	display: flex;
+	flex-direction: row;
+}
+
+#answer {
+	color: var(--color-primary);
+	background-color: var(--color-background-third);
+	height: 37px;
+	border-radius: 10px;
+	width: 120px;
+}
+
+#calculate {
+	padding: 0;
+	z-index: 10;
+	border: none;
+	font-size: medium;
+	color: var(--color-text);
+	border-radius: 10px;
+}
+.tangent {
+	fill: none;
+	stroke: black;
+	stroke-width: 2px;
+}
+button {
+	color: var(--color-primary);
+	cursor: pointer;
+	user-select: none;
+	background-color: var(--color-background-second);
+	padding: 5px;
+	border-radius: 5px;
+	transition: background-color 350ms !important;
+}
+button:hover {
+	background-color: var(--color-background-third);
+}
+label {
+	display: inline-block;
+}
+select {
+	border-radius: 10px;
+	background-color: var(--color-background-second);
+	color: var(--color-primary);
+	padding: 10px;
+	margin: 10px;
+	transition: background-color 0.3s ease;
+}
+select:hover {
+	background-color: var(--color-background-third);
+}
+
+.hvr-outline-out {
+	padding: 10px 15px !important;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	position: relative;
+}
+.hvr-outline-out:before {
+	content: '';
+	position: absolute;
+	border: var(--color-background-third) dashed 2px;
+	border-radius: 5px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transition-duration: 0.3s;
+	transition-property: top, right, bottom, left;
+}
+.hvr-outline-out:hover:before,
+.hvr-outline-out:focus:before,
+.hvr-outline-out:active:before {
+	top: -5px;
+	right: -5px;
+	bottom: -5px;
+	left: -5px;
+}
+
+.bar {
+	fill: var(--color-background-second);
+}
+
+.bar:hover {
+	fill: var(--color-background-third);
+	transition: all 300ms ease;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	shape-rendering: crispEdges;
+}
+
+.axis text {
+	fill: var(--color-text);
+}
+
+.x.axis path {
+	display: none;
+}
+
+.tooltip {
+	background: none;
+	color: var(--color-primary);
+	border: 0;
+	border-radius: 8px;
+	font-size: 12px;
+	font-weight: bold;
+	height: 20px;
+	padding: 2px;
+	pointer-events: none;
+	position: absolute;
+	text-align: center;
+	width: 120px;
+}

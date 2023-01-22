@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Binomial Distribution Calculator</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<script src="index.js"></script>
+	<body>
+		<h1>Binomial Distribution Calculator</h1>
+		<br />
+		<br />
+		<div class="stack-row center">
+			<div style="height: auto">
+				<label for="n">$$ n = $$</label>
+				<input onchange="attempt()" type="number" id="n" name="n" />
+				<br />
+				<label for="p">$$ p = $$</label>
+				<input onchange="attempt()" type="number" id="p" name="p" />
+				<br />
+				<label for="x">$$ x = $$</label>
+				<input onchange="attempt()" type="number" id="x" name="x" />
+				<br />
+				<br />
+				<div class="stack-row center">
+					<select onchange="attempt()" id="prob-calc" name="prob-calc">
+						<option>P(X = x)</option>
+						<option>P(X >= x)</option>
+						<option>P(X <= x)</option>
+					</select>
+					<span style="margin: 0px 10px">$$ = $$</span>
+					<div id="result"></div>
+				</div>
+			</div>
+			<div class="stack-row center">
+				<div class="stack-row center" id="graph">
+					<b id="warning">INPUT VALID VALUES</b>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+</html>
