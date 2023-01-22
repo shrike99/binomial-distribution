@@ -90,8 +90,6 @@ function getDataPoints(n, x, p, q) {
 }
 
 function drawGraph(dataPoints) {
-	//var dataPoints = getDataPoints(n, x, p, q);
-
 	const margin = { top: 20, right: 20, bottom: 30, left: 40 };
 	const width = 800 - margin.left - margin.right;
 	const height = 500 - margin.top - margin.bottom;
