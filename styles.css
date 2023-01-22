@@ -10,6 +10,7 @@
 	--color-background-fourth: #384e86;
 	--color-text: #c8e0ff;
 	--color-primary: #fc85ae;
+	--shade-red: #fd6868;
 
 	font-family: 'Space Grotesk', sans-serif;
 }
@@ -77,6 +78,12 @@ select {
 	font-size: medium;
 	color: var(--color-text);
 	border-radius: 10px;
+}
+.highlight {
+	fill: #81e6d9 !important;
+}
+.highlight:hover {
+	fill: #a1fff2 !important;
 }
 .tangent {
 	fill: none;

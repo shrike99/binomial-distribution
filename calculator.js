@@ -48,6 +48,7 @@ function getDataPoints(n, x, p, q) {
 		temp.push({
 			x: i,
 			y: nCr(n, i) * Math.pow(p, i) * Math.pow(q, n - i),
+			highlight: false,
 		});
 	}
 
@@ -55,6 +56,7 @@ function getDataPoints(n, x, p, q) {
 	if (operation.includes('P(X = x)')) {
 		return temp.map((d) => {
 			d.y = round(d.y, 4);
+			if (d.x === x) d.highlight = true;
 			return d;
 		});
 	}
@@ -73,6 +75,7 @@ function getDataPoints(n, x, p, q) {
 				dataPoints.push({
 					x: i,
 					y: parseFloat(round(sum, 4)),
+					highlight: i === x,
 				});
 			}
 
@@ -81,6 +84,7 @@ function getDataPoints(n, x, p, q) {
 				dataPoints.push({
 					x: i,
 					y: parseFloat(round(1 - sum, 4)),
+					highlight: i === x,
 				});
 			}
 		}
@@ -123,11 +127,13 @@ function drawGraph(dataPoints) {
 
 	svg.append('g').attr('class', 'y axis').call(yAxis).append('text').attr('transform', 'rotate(-90)').attr('y', 6).attr('dy', '.71em').style('text-anchor', 'end').text('Probability');
 
+	const barClasses = (d) => (d.highlight ? 'bar highlight' : 'bar');
+
 	svg.selectAll('.bar')
 		.data(dataPoints)
 		.enter()
 		.append('rect')
-		.attr('class', 'bar')
+		.attr('class', (d) => barClasses(d))
 		.attr('x', (d) => xScale(d.x))
 		.attr('width', xScale.bandwidth())
 		.attr('y', (d) => yScale(d.y))
